@@ -1,0 +1,31 @@
+{% extends 'notes/base.html' %}
+{% block title %}{% if form.instance.pk %}Редактировать{% else %}Создать{% endif %} заметку{% endblock %}
+{% block content %}
+  <h2>{% if form.instance.pk %}Редактирование{% else %}Создание{% endif %}</h2>
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <p>
+      {{ form.title.label_tag }}<br>
+      {{ form.title.errors }}
+      {{ form.title }}
+    </p>
+
+    <p>
+      {{ form.body.label_tag }}<br>
+      {{ form.body.errors }}
+      {{ form.body }}
+    </p>
+
+    <fieldset>
+      <legend>{{ form.tags.label }}</legend>
+      {{ form.tags.errors }}
+      {{ form.tags }}
+    </fieldset>
+
+    <button type="submit">Сохранить</button>
+    <a href="{% if form.instance.pk %}{{ form.instance.get_absolute_url }}{% else %}{% url 'notes:list' %}{% endif %}">Отмена</a>
+  </form>
+{% endblock %}

@@ -1,0 +1,152 @@
+[
+  {
+    "model": "notes.tag",
+    "pk": 1,
+    "fields": {
+      "name": "Python",
+      "slug": "python"
+    }
+  },
+  {
+    "model": "notes.tag",
+    "pk": 2,
+    "fields": {
+      "name": "Django",
+      "slug": "django"
+    }
+  },
+  {
+    "model": "notes.tag",
+    "pk": 3,
+    "fields": {
+      "name": "CBV",
+      "slug": "cbv"
+    }
+  },
+  {
+    "model": "notes.tag",
+    "pk": 4,
+    "fields": {
+      "name": "Tips",
+      "slug": "tips"
+    }
+  },
+  {
+    "model": "notes.tag",
+    "pk": 5,
+    "fields": {
+      "name": "Misc",
+      "slug": "misc"
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 1,
+    "fields": {
+      "title": "First Note",
+      "body": "This is the first note.",
+      "created_at": "2025-09-14T12:00:00Z",
+      "updated_at": "2025-09-14T12:00:00Z",
+      "tags": [1, 4]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 2,
+    "fields": {
+      "title": "Second Note",
+      "body": "Django CBVs are powerful.",
+      "created_at": "2025-09-14T12:05:00Z",
+      "updated_at": "2025-09-14T12:05:00Z",
+      "tags": [2, 3]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 3,
+    "fields": {
+      "title": "Python Tips",
+      "body": "Some tips for Python programming.",
+      "created_at": "2025-09-14T12:10:00Z",
+      "updated_at": "2025-09-14T12:10:00Z",
+      "tags": [1, 4]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 4,
+    "fields": {
+      "title": "Misc Note",
+      "body": "This note is uncategorized.",
+      "created_at": "2025-09-14T12:15:00Z",
+      "updated_at": "2025-09-14T12:15:00Z",
+      "tags": [5]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 5,
+    "fields": {
+      "title": "CBV Example",
+      "body": "How to use ListView and DetailView.",
+      "created_at": "2025-09-14T12:20:00Z",
+      "updated_at": "2025-09-14T12:20:00Z",
+      "tags": [3, 2]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 6,
+    "fields": {
+      "title": "Advanced Django",
+      "body": "Signals, caching, and custom filters.",
+      "created_at": "2025-09-14T12:25:00Z",
+      "updated_at": "2025-09-14T12:25:00Z",
+      "tags": [2, 5]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 7,
+    "fields": {
+      "title": "Quick Tips",
+      "body": "Useful shortcuts for productivity.",
+      "created_at": "2025-09-14T12:30:00Z",
+      "updated_at": "2025-09-14T12:30:00Z",
+      "tags": [4]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 8,
+    "fields": {
+      "title": "Project Setup",
+      "body": "How to set up a Django project.",
+      "created_at": "2025-09-14T12:35:00Z",
+      "updated_at": "2025-09-14T12:35:00Z",
+      "tags": [2, 1]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 9,
+    "fields": {
+      "title": "Readtime Filter",
+      "body": "Custom template filter for estimating reading time.",
+      "created_at": "2025-09-14T12:40:00Z",
+      "updated_at": "2025-09-14T12:40:00Z",
+      "tags": [3, 4]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 10,
+    "fields": {
+      "title": "Final Note",
+      "body": "This is the last note in the fixture.",
+      "created_at": "2025-09-14T12:45:00Z",
+      "updated_at": "2025-09-14T12:45:00Z",
+      "tags": [1, 5]
+    }
+  }
+]

@@ -1,0 +1,30 @@
+{% extends 'notes/base.html' %}
+{% block title %}Список заметок{% endblock %}
+{% block content %}
+  {% for note in notes %}
+    <div class="note-card">
+      <h2><a href="{% url 'notes:detail' note.pk %}">{{ note.title }}</a></h2>
+      <p class="meta">{{ note.created_at|date:"d.m.Y H:i" }}</p>
+      <p>{{ note.body|truncatechars:150 }}</p>
+      <div class="tags">
+        {% for tag in note.tags.all %}
+          <a href="{% url 'notes:by_tag' slug=tag.slug %}">{{ tag.name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  {% empty %}
+    <p>Нет заметок</p>
+  {% endfor %}
+
+  {% if is_paginated %}
+    <div class="pagination">
+      {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+      {% endif %}
+      <span>{{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Вперед</a>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endblock %}

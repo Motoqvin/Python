@@ -1,0 +1,23 @@
+{% extends 'notes/base.html' %}
+{% load readtime %}
+{% block title %}{{ note.title }}{% endblock %}
+{% block content %}
+  <article>
+    <h2>{{ note.title }}</h2>
+    <p class="meta">Создано: {{ note.created_at|date:"Y-m-d H:i" }}</p>
+    <p>Время чтения: {{ note.body|readtime }}</p>
+    <div class="body">{{ note.body|linebreaks }}</div>
+    <p class="tags">
+      {% for tag in note.tags.all %}
+        <a href="{% url 'notes:by_tag' slug=tag.slug %}">#{{ tag.name }}</a>
+      {% endfor %}
+    </p>
+
+    {% if user.is_authenticated %}
+      <p>
+        <a href="{% url 'notes:edit' pk=note.pk %}">Редактировать</a> |
+        <a href="{% url 'notes:delete' pk=note.pk %}">Удалить</a>
+      </p>
+    {% endif %}
+  </article>
+{% endblock %}

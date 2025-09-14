@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <article class="note-card">
+        <h2><a href="{{ note.get_absolute_url }}">{{ note.title }}</a></h2>
+        <p class="meta">{{ note.created_at|date:"Y-m-d H:i" }} — {{ note.updated_at|timesince }} назад</p>
+        <p>{{ note.body|truncatechars:200 }}</p>
+        <p class="tags">
+            {% for tag in note.tags.all %}
+            <a href="{% url 'notes:by_tag' slug=tag.slug %}">#{{ tag.name }}</a>
+            {% empty %}
+            <span>—</span>
+            {% endfor %}
+        </p>
+    </article>
+</body>
+</html>
